@@ -1,0 +1,35 @@
+The task I will be choosing is called ex4-label-product.c
+
+In the task stated above I have not tested if the input would be a different type, for example:
+The user could input an integer for the item_code or a string for the sold_items.
+A way to fix this would be to have a test section in the initial loop (which is adding elements to the linked list),
+e.g
+The following would check if the given text can be turned into an integer or not
+n would be the variable given
+
+if(sizeof(atoi(n)) != sizeof(int))
+{
+    return "The information given is wrong!\n";
+}
+
+Since calloc is used in the program a way to test it can be:
+if(!first)
+{
+    printf("Memory failure!\n");
+    exit(1);
+}
+calloc compared to malloc is quite reliable that is why the original code does not include memory error handling
+
+In the task description, there are some assumptions, but if the item code has a different country code then it will not know what to do,
+so if the code is not recognised by any other else if statements it will return a message stating that the code is undefined.
+
+The assumption is that the only country codes used will be from the task description. 
+Another assumption is that each item will have the correct amount of information (e.g each item has 4 parts, 3 parts from the command line)
+
+To keep the code clean I have added extra spacing between lines, this will improve the readability of the code. 
+The variable & function names used also try to explain what the variable is or what the function does.
+
+------
+
+Unfortunately this problem can only be O(n) since the more items it has the more iterations it needs to modify and print the values
+This program has to iterate through the initial command-line arguments, then iterate through the linked list to modify the sales status & get the average sales, and finally, it has to print each node in the linked list.

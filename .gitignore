@@ -1,0 +1,10 @@
+# Ignore every file
+*/Lecture/*.c
+*/*/*
+
+# Except...
+!.gitignore
+!FinalExam/*.txt
+!*/*.c
+!*/Lab*/*.c
+!README.md
